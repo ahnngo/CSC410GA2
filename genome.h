@@ -19,13 +19,15 @@ class genome {
     int getGreen(int index); // get Green
     int getBlue(int index); // get Blue
     void print(); // print out the genes
-    void set_mRate(double val);
-    double get_mRate();
-    void mutate_gene(int index);
-    void mutate();
-    double calculate_gene_fitness(int index, Pixel targetPixel);
-    double calculate_overall_fitness(Pixel* target, int nPixels);
-    void set_pixel(int index, Pixel newPixel);
+    void set_mRate(double val); // set mRate value
+    double get_mRate(); // get mRate value
+    void mutate_gene(int index); // mutate gene at the provided index
+    void mutate(); // mutate all genes in the object
+    double calculate_gene_fitness(int index, Pixel targetPixel); // calculate the average percent different of the RGB values between target and genes[index]
+    double calculate_overall_fitness(Pixel* target, int nPixels); // calculate the difference between what genome should produce and what it actually produces
+    void setPixel(int index, Pixel newPixel); // set the pixel at provided index to newPixel
+    void UnitTest(); // Unit Testing for methods and have return
+    
   
   private:
     Pixel* genes;
