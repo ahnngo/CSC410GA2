@@ -203,6 +203,5 @@ void genome::UnitTest() {
     cout << (-1 == testGenome.getGreen(10)) << endl;
     cout << endl;
     
-    
 };
 
