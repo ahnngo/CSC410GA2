@@ -1,3 +1,5 @@
+#include <string>
+
 struct Pixel {
   int red; 
   int blue;
@@ -26,6 +28,7 @@ class genome {
     double calculate_gene_fitness(int index, Pixel targetPixel); // calculate the average percent different of the RGB values between target and genes[index]
     double calculate_overall_fitness(Pixel* target, int nPixels); // calculate the difference between what genome should produce and what it actually produces
     void setPixel(int index, Pixel newPixel); // set the pixel at provided index to newPixel
+    std::string showResult(bool test); // return test fails or passes
     void UnitTest(); // Unit Testing for methods and have return
     
   

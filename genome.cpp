@@ -2,6 +2,7 @@
 #include <cassert>
 #include <iostream>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -167,6 +168,15 @@ void genome::setPixel(int index, Pixel newPixel) {
   }
 };
 
+std::string genome::showResult(bool test) {
+  if (test == 1) {
+    return "Test passed";
+  }
+  else {
+    return "Test failed";
+  }
+};
+
 void genome::UnitTest() {
     // Unit Testing for created methods
     genome testGenome;
@@ -185,22 +195,22 @@ void genome::UnitTest() {
     testGenome.setGreen(0, 134);
     
     cout << "Test getRed()" << endl;
-    cout << (226 == testGenome.getRed(0)) << endl;
-    cout << (100 == testGenome.getRed(3)) << endl;
-    cout << (0 == testGenome.getRed(2)) << endl;
-    cout << (-1 == testGenome.getRed(7)) << endl;
+    cout << showResult(226 == testGenome.getRed(0)) << endl;
+    cout << showResult(100 == testGenome.getRed(3)) << endl;
+    cout << showResult(0 == testGenome.getRed(2)) << endl;
+    cout << showResult(-1 == testGenome.getRed(7)) << endl;
     cout << endl;
     cout << "Test getBlue()" << endl;
-    cout << (56 == testGenome.getBlue(0)) << endl;
-    cout << (43 == testGenome.getBlue(3)) << endl;
-    cout << (9 == testGenome.getBlue(1)) << endl;
-    cout << (-1 == testGenome.getBlue(10)) << endl;
+    cout << showResult(56 == testGenome.getBlue(0)) << endl;
+    cout << showResult(43 == testGenome.getBlue(3)) << endl;
+    cout << showResult(9 == testGenome.getBlue(1)) << endl;
+    cout << showResult(-1 == testGenome.getBlue(10)) << endl;
     cout << endl;
     cout << "Test getGreen()" << endl;
-    cout << (79 == testGenome.getGreen(2)) << endl;
-    cout << (3 == testGenome.getGreen(1)) << endl;
-    cout << (134 == testGenome.getGreen(0)) << endl;
-    cout << (-1 == testGenome.getGreen(10)) << endl;
+    cout << showResult(79 == testGenome.getGreen(2)) << endl;
+    cout << showResult(3 == testGenome.getGreen(1)) << endl;
+    cout << showResult(134 == testGenome.getGreen(0)) << endl;
+    cout << showResult(-1 == testGenome.getGreen(10)) << endl;
     cout << endl;
     
 };
